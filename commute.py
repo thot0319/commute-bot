@@ -12,8 +12,9 @@ async def on_ready():
     game = discord.Game('★표시될 게임이름★')
     await client.change_presence(status=discord.Status.online, activity=game)
 
+# PERMISSION ERROR
+
 @client.event
-# 메시지관리 권한이 있는 역할만 사용이 가능함 ↓↓↓↓↓↓↓↓
 @commands.has_permissions(manage_messages=True)
 async def on_message(message):
     if message.content.startswith("/출근"):
