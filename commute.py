@@ -14,8 +14,8 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith("/출근"):
         try:
-            # 1명일시 'or message.author.id == ★유저id★' 삭제 / 이상 일시 'or message.author.id == ★유저id★'추가
-            if message.author.id == ★유저id★ or message.author.id == ★유저id★:
+            # 메시지 관리 권한 있을시 사용가능
+            if message.author.guild_permissions.manage_messages:
                 author = message.guild.get_member(int(message.author.id))
                 embed = discord.Embed(color=0x80E12A)
                 channel = ★전송될 채널 아이디★
@@ -28,8 +28,7 @@ async def on_message(message):
 
     if message.content.startswith("/퇴근"):
         try:
-            # 1명일시 'or message.author.id == ★유저id★' 삭제 / 이상 일시 'or message.author.id == ★유저id★'추가
-            if message.author.id == ★유저id★ or message.author.id == ★유저id★:
+            if message.author.guild_permissions.manage_messages:
                 author = message.guild.get_member(int(message.author.id))
                 embed = discord.Embed(color=0xFF0000)
                 channel = ★전송될 채널 아이디★
